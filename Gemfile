@@ -13,6 +13,12 @@ gem 'devise'
    gem 'sqlite3'
  end
 
+ gem 'figaro', '1.0'
+
+gem 'faker'
+
+gem 'pundit'
+
 #---original new app gems--
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
