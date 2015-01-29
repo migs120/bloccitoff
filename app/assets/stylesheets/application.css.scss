@@ -1,5 +1,7 @@
 @import "bootstrap";
 
+*{text-align:center;}
+
  .user-info {
    margin-top: 9px;
  }
@@ -8,6 +10,28 @@
    margin-top: 5px;
  }
 
+
+#mommy{
+  height:250px;
+  border:2px solid blue;
+  background-color:#E0E0D1;
+		display:-webkit-box;
+		-webkit-box-orient:vertical;
+		border-radius:10px;
+		-webkit-box-pack:center;
+		box-shadow: 10px 10px 10px #888888;
+		-webkit-transition:-webkit-transform 1s; scale:1s;
+		
+		
+}
+#mommy:hover{-webkit-transform: scale(1.2,1.2);}
+
+
+#gd{
+       margin-top:20px;
+  
+  
+}
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
