@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
   
-  has_one :list
+  has_many :list
   
   def admin?
    role == 'admin'
