@@ -53,7 +53,9 @@ require 'faker'
 # Create item
  100.times do
    Item.create!(
-     # user: users.sample,   
+    # user: users.sample, 
+     list: list.sample,
+     #list: list.sample,
      name: Faker::Lorem.sentence,
      
    )

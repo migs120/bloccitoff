@@ -1,0 +1,9 @@
+ <h1>ITEMS</h1>
+<% @items.each do |itemm| %>
+<p><%=link_to itemm.name, '#' %></p>
+
+<% end %>
+<br/>
+<br/>
+
+<%=  link_to "Add Items To List", new_list_item_path(@list), class: 'btn btn-success' %>

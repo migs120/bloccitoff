@@ -4,24 +4,27 @@ class ListsController < ApplicationController
   
   
   def index
-     @list = current_user.list
+     @lists = current_user.lists
+  
   end
 
   def show
    
-    @list = current_user.list.find(params[:id])
-      # @list = current_user.list
-      # @list = List.find(params[:id])
+    @list = current_user.lists.find(params[:id])
+      # @list = current_user.list     
+    @items = @list.items
+            # current_user.list.find(params[:id]).item
+    @new_item = Item.new
     
   end
 
       def new
        @list = List.new
+       
   end
   
       def create
-          @list = current_user.list.build(params.require(:list).permit(:title))
-              # current_user.list.build
+          @list = current_user.lists.build(params.require(:list).permit(:title))           
               #  @list = List.new(params.require(:list).permit(:title))     
       
       if @list.save
@@ -45,7 +48,7 @@ class ListsController < ApplicationController
   
   
      def update
-       @list = current_user.list.find(params[:id])
+       @list = current_user.lists.find(params[:id])
        
      if @list.update_attributes(params.require(:list).permit(:title))
          flash[:notice] = "List was updated."

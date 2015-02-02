@@ -19,6 +19,12 @@ gem 'faker'
 
 gem 'pundit'
 
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'capybara'
+end
+
+
 #---original new app gems--
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'

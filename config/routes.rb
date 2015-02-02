@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   get 'welcome/about'
   
-  resources :lists  #, except: [:index]
+  resources :lists  do   #, except: [:index]
+    resources :items
+  end
   
    # root "application#hello"
   
