@@ -8,13 +8,15 @@ class ListsController < ApplicationController
   
   end
 
-  def show
+  def show  #list controller
    
     @list = current_user.lists.find(params[:id])
       # @list = current_user.list     
     @items = @list.items
             # current_user.list.find(params[:id]).item
     @new_item = Item.new
+   # @item_find = current_user.lists.find(params[:id]).items.find(params[:id])
+    @item_del = List.find(params[:id])
     
   end
 

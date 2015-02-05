@@ -42,7 +42,7 @@ require 'faker'
 
  # Create list
  50.times do
-   List.create!(
+ list = List.create!(
      user:   users.sample,
      title:  Faker::Lorem.sentence,
      
@@ -50,16 +50,17 @@ require 'faker'
  end
  list = List.all
  
-# Create item
+## Create item
  100.times do
    Item.create!(
     # user: users.sample, 
-     list: list.sample,
+    list: list.sample,
      #list: list.sample,
      name: Faker::Lorem.sentence,
      
    )
  end
+item = Item.all
  
  puts "Seed finished"
 puts "#{User.count} users created"

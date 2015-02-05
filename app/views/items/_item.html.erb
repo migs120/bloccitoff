@@ -1,9 +1,12 @@
- <h1>ITEMS</h1>
+<h1>ITEMS_partial</h1>
 <% @items.each do |itemm| %>
-<p><%=link_to itemm.name, '#' %></p>
+<p><%= link_to itemm.name, edit_list_item_path(@list,itemm.id) %>  | <%= link_to "Delete Item", [@item_del, itemm] , method: :delete,  data: { confirm: 'Are you sure you want to delete this list?' } %>     </p>
 
 <% end %>
 <br/>
 <br/>
 
 <%=  link_to "Add Items To List", new_list_item_path(@list), class: 'btn btn-success' %>
+
+
+<!--  list_item GET    /lists/:list_id/items/:id(.:format)      items#show    -->
