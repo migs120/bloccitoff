@@ -17,6 +17,7 @@ class ListsController < ApplicationController
     @new_item = Item.new
    # @item_find = current_user.lists.find(params[:id]).items.find(params[:id])
     @item_del = List.find(params[:id])
+   # @days_left = days_left
     
   end
 
@@ -75,6 +76,9 @@ class ListsController < ApplicationController
      end
    end
 
+#      def days_left
+#        (DateTime.now.to_date - created_at.to_date).to_i
+#     end
   
   
 end

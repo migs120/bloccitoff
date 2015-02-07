@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  respond_to :html, :js
+  
   def index
     
   end
@@ -8,6 +10,7 @@ class ItemsController < ApplicationController
    @item = @list.items.find(params[:id])
    @item1 = @list.items
     @item_del =@list, Item.find(params[:id])
+   # @days_left = days_left
     
     #======test variables=====
     
@@ -78,6 +81,10 @@ class ItemsController < ApplicationController
        render :show
      end
    end
+  
+  def days_left
+      (DateTime.now.to_date - created_at.to_date).to_i
+    end
 
   
   

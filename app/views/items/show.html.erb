@@ -1,16 +1,31 @@
 <h3> Items For: </h3><br/>
 <h3> <%= " #{@list.title}" %> </h3><br/><br/>
 
-<% @item1.each  do |itemm| %>
+    <% @item1.each do |itemm| %>
+         
+  <p>
+    <% if (itemm.days_left == 7) %>
+             <font color="gray"> 
+               <%=  "#{itemm.name} has expired " %>
+                                 | <%= link_to "Delete", @item_del , method: :delete, 
+                                  data: { confirm: 'Are you sure you want to delete this list?' } %>   
+              </font>
+    <% else  %>
+              <%= link_to itemm.name, edit_list_item_path(@list,itemm.id) %>
+              | <%= link_to "Delete Item", @item_del , method: :delete, 
+              data: { confirm: 'Are you sure you want to delete this list?' } %>       
+              <%= link_to "", @item_del, method: :delete, class: 'glyphicon glyphicon-ok' %>
+              | <%= (7-itemm.days_left ) %>  days left to do 
+    <%  end %>
+    
+    
+  </p>
 
-<h4> <%= itemm.name %>  | <%= link_to "Delete Item", @item_del , method: :delete,  data: { confirm: 'Are you sure you want to delete this list?' } %> </h4> 
 
-
-<%= link_to "Edit", edit_list_item_path(@list, itemm ), class: 'btn btn-success' %>
-
-<%end%>
+<% end %>
 
 <br/>
-
+<br/>
+<br/>
 
  
