@@ -1,5 +1,5 @@
 class ListsController < ApplicationController
-  
+   respond_to :html, :js
   before_action :authenticate_user! # users must be signed in before any lists_controller method
   
   

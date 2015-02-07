@@ -74,17 +74,17 @@ class ItemsController < ApplicationController
    
  
        if @item.destroy
-         flash[:notice] = "\"#{name}\" was deleted successfully."
-       redirect_to @list
-     else
-       flash[:error] = "There was an error deleting the post."
-       render :show
-     end
+             flash[:notice] = "\"#{name}\" was deleted successfully."
+             redirect_to @list
+       else
+               flash[:error] = "There was an error deleting the post."
+                 render :show
+        end
+       
+              
    end
   
-  def days_left
-      (DateTime.now.to_date - created_at.to_date).to_i
-    end
+# list_item GET    /lists/:list_id/items/:id(.:format)      items#show 
 
   
   
