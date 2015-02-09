@@ -5,6 +5,7 @@ class ListsController < ApplicationController
   
   def index
      @lists = current_user.lists
+  #  @item = current_user.lists.find(params[:list_id]), Item.find(params[:id])
   
   end
 

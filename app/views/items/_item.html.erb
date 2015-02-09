@@ -1,4 +1,13 @@
-<h1>ITEMS_partial</h1>
+<script>
+$(document).ready(function(){
+                              $("i").click(function(){
+                                                        $(this).parent().hide();
+                                                    });
+                            });
+</script>
+
+
+<h1><font color="red">Items To Do</font></h1>
 
     <% @items.each do |itemm| %>
          
@@ -6,15 +15,15 @@
     <% if (itemm.days_left == 7) %>
              <font color="gray"> 
                <%=  "#{itemm.name} has expired " %>
-                                 | <%= link_to "Delete", [@item_del, itemm] , method: :delete, 
-                                  data: { confirm: 'Are you sure you want to delete this list?' } %>   
+                                <i> | <%= link_to "Delete", [@item_del, itemm] , method: :delete, remote: true %> </i>  
               </font>
     <% else  %>
               <%= link_to itemm.name, edit_list_item_path(@list,itemm.id) %>
-              | <%= link_to "Delete Item", [@item_del, itemm] , method: :delete, 
-              data: { confirm: 'Are you sure you want to delete this list?' } %>       
-              <%= link_to "", @item_del, method: :delete, class: 'glyphicon glyphicon-ok' %>
+              
               | <%= (7-itemm.days_left ) %>  days left to do 
+    
+              <i>| <%= link_to "Done/Delete", [@item_del, itemm] , method: :delete, remote: true %>  </i>     
+              <i><%= link_to "", [@item_del, itemm] , method: :delete, class: 'glyphicon glyphicon-ok' %></i>
     <%  end %>
     
     

@@ -11,7 +11,9 @@ gem 'devise'
  
  group :development do
    gem 'sqlite3'
- end
+   gem 'better_errors'
+   gem 'binding_of_caller'
+end
 
  gem 'figaro', '1.0'
 

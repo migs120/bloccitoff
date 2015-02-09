@@ -75,11 +75,15 @@ class ItemsController < ApplicationController
  
        if @item.destroy
              flash[:notice] = "\"#{name}\" was deleted successfully."
-             redirect_to @list
+           #  redirect_to @list
        else
                flash[:error] = "There was an error deleting the post."
-                 render :show
+              #   render :show
         end
+       
+       respond_with(@item) do |format|
+         format.html { redirect_to list_path(@list)}
+     end
        
               
    end
